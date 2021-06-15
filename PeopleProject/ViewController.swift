@@ -31,15 +31,17 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
         
-        let person = personList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "personCell",
+            for: indexPath
+        )
+        
+//        let person = personList[indexPath.row]
         
         var content = cell.defaultContentConfiguration()
         content.text = "\(Person().name) \(Person().surname)"
         content.secondaryText = "\(Person().phone)"
-        
-                    
         
         cell.contentConfiguration = content
         return cell
